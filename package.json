@@ -4,7 +4,7 @@
   "description": "Develop a tic tac toe game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha **/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Ananya-96/tic-tac-toe#readme",
   "dependencies": {
-    "readline-sync": "^1.4.9"
+    "readline-sync": "^1.4.9",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 }
