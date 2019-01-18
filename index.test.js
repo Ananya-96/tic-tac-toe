@@ -1,28 +1,48 @@
-const { makeArray } = require('./index');
+const { TicTacToeGame } = require('./index');
+var assert = require('assert');
 
-
+let width = 3, height = 3;
+let arr = [[0,0,0],[0,0,0],[0,0,0]];
+let tictactoeObj = new TicTacToeGame();
 describe('Checking with matrix', () => {
 
 it('should check the matrix length', () => {
-    let width = 3, height = 3;
-    let res = makeArray(width, height);
-    if (res.length * res[0].length !== (width * height)) 
-    throw new Error(`Excepted ${width*height} but got ${res.length * res[0].length}`);
+    console.log("checking")
+     let res = tictactoeObj.makeArray(width, height);
+    assert.equal(res.length * res[0].length,(width * height));
+
 });
 
 it ('should check the matrix initialization', () => {
-    let width = 3, height = 3;
-    let res = makeArray(width, height);
+    let res = tictactoeObj.makeArray(width, height);
     let count = 0;
     for(let i = 0; i < height ; i++) {
         for(let j = 0; j < width; j++){
-            if (res [i][j] == 0)
+            if (res [i][j] == '-')
                 count ++;
             else
                 break;
         }
     }
-    if (count !== (width*height))
-       throw new Error (`Excepted ${width*height} but got ${count}`);
+    assert.equal(count,(width * height));
 });
 });
+
+describe('Checking user inputs boundary conditions', () => {
+     let x , y;
+    it ('should check the user values is less than the matrix boundary', () => {
+             x = 2, y = 1;
+            assert.equal(tictactoeObj.checkInput(arr,x,y,width,height),true);
+     });
+
+     it('should check the user inputs is greater than the matrix boundary', () => {
+         x = 100, y = 9;
+         assert.equal(tictactoeObj.checkInput(arr,x,y,width,height),false);
+     });
+
+});
+
+
+
+
+

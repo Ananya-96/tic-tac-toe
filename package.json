@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/Ananya-96/tic-tac-toe#readme",
   "dependencies": {
+    "assert": "^1.4.1",
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "readline-sync": "^1.4.9"
   }
 }
