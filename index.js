@@ -10,4 +10,5 @@ function makeArray(row, column) {
 }
 console.log(makeArray(3,3));
 console.log("enter a row:");
-console.log("enter the column:")
+console.log("enter the column:");
+console.log("hello")
