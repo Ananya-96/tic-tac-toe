@@ -2,7 +2,7 @@ const { TicTacToeGame } = require('./index');
 var assert = require('assert');
 
 let width = 3, height = 3;
-let arr = [[0,0,0],[0,0,0],[0,0,0]];
+let arr = [["-","-","-"],["-","-","-"],["-","-","-"]];
 let tictactoeObj = new TicTacToeGame();
 describe('Checking with matrix', () => {
 
@@ -32,6 +32,7 @@ describe('Checking user inputs boundary conditions', () => {
      let x , y;
     it ('should check the user values is less than the matrix boundary', () => {
              x = 2, y = 1;
+             console.log(x + " " + y)
             assert.equal(tictactoeObj.checkInput(arr,x,y,width,height),true);
      });
 

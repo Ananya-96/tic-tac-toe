@@ -5,7 +5,7 @@ class TicTacToeGame {
         for (var i = 0; i < row; i++) {
             matrixArray[i] = [];
             for (var j = 0; j < column; j++) {
-                matrixArray[i][j] = '-';
+                matrixArray[i][j] = "-";
             }
         }
         return matrixArray;
@@ -14,7 +14,7 @@ class TicTacToeGame {
     startGame() {
         let tictactoe = [];
         let width = 3, height = 3;
-        tictactoe = makeArray(width, height);
+        tictactoe = this.makeArray(width, height);
         for (var i = 0; i < (width * height); i++) {
             var x;
             var y;
@@ -23,29 +23,43 @@ class TicTacToeGame {
                 console.log("Enter x and y of player 1")
                 x = readline.question("enter x coordinate ");
                 y = readline.question("enter y coordinate ");
-                if (!checkInput(tictactoe, x, y, width, height)) {
+                if (!this.checkInput(tictactoe, x, y, width, height)) {
                     i--;
                     continue;
                 }
-                tictactoe = initSymbol(tictactoe, x, y, "x")
-                console.log(tictactoe);
+                tictactoe = this.initSymbol(tictactoe, x, y, "x")
+
 
             }
             else {
                 console.log("Enter x and y of player 2 ")
                 x = readline.question("enter x coordinate ");
                 y = readline.question("enter y coordinate ");
-                if (!checkInput(tictactoe, x, y, width, height)) {
+                if (!this.checkInput(tictactoe, x, y, width, height)) {
                     i--;
                     continue;
                 }
-                tictactoe = initSymbol(tictactoe, x, y, "o")
-                console.log(tictactoe);
+                tictactoe = this.initSymbol(tictactoe, x, y, "o")
+
             }
+
+            this.printMatrix(tictactoe)
 
         }
 
     }
+
+    printMatrix(tictactoe) {
+        for (let index = 0; index < tictactoe.length; index++) {
+            var temp = "";
+            for (let j = 0; j < tictactoe.length; j++) {
+                temp = temp + tictactoe[index][j] + "      ";
+            }
+            console.log(temp)
+            console.log();
+        }
+    }
+
 
     initSymbol(arr, x, y, symbol) {
         arr[x][y] = symbol;
@@ -59,7 +73,7 @@ class TicTacToeGame {
             console.log("Please enter again")
             return false;
         }
-        if (arr[x][y] != 0) {
+        if (arr[x][y] != "-") {
             console.log("This coordinates has already filled by the values")
             console.log("Please enter again")
             return false;
@@ -68,6 +82,7 @@ class TicTacToeGame {
         return true;
     }
 }
+
 
 module.exports = { TicTacToeGame };
 

@@ -4,7 +4,8 @@
   "description": "Develop a tic tac toe game",
   "main": "index.js",
   "scripts": {
-    "test": "mocha **/*.test.js"
+    "test": "mocha **/*.test.js",
+    "start": "node start.js"
   },
   "repository": {
     "type": "git",
