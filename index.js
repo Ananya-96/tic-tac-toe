@@ -53,7 +53,7 @@ class TicTacToeGame {
             }
 
             this.printMatrix(tictactoe);
-            result = this.compareCondition(tictactoe, symbol);
+            result = this.compareCondition( symbol);
             if (result == "player 1" || result == "player 2") {
                 break;
             }
@@ -86,7 +86,7 @@ class TicTacToeGame {
     }
 
     checkInput(arr, x, length) {
-        if ((x > length - 1 || x < -1) || x === '') {
+        if ((x >= length - 1 || x <= -1) || x === '') {
             console.log("position out of matrix range")
             console.log("Please enter again")
             return false;
@@ -100,7 +100,7 @@ class TicTacToeGame {
         return true;
     }
 
-    compareCondition(tictactoe, symbol) {
+    compareCondition( symbol) {
         var res;
         if (symbol == "x") {
             res = this.winnerCheck(xArray, symbol);
