@@ -156,7 +156,8 @@ class TicTacToeGame {
     }
 }
 
-var startgame = new TicTacToeGame();
-startgame.startGame();
+
+console.log('index');
+
 module.exports = { TicTacToeGame };
 

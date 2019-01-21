@@ -1,9 +1,12 @@
+console.log('tst');
 const { TicTacToeGame } = require('./index');
 var assert = require('assert');
 
 let width = 3, height = 3;
 let arr = [["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]];
+
 let tictactoeObj = new TicTacToeGame();
+
 describe('Checking with matrix', () => {
 
     it('should check the matrix length', () => {
