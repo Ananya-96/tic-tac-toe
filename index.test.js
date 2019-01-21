@@ -1,3 +1,4 @@
+console.log('tst');
 const { TicTacToeGame } = require('./index');
 var assert = require('assert');
 
@@ -24,14 +25,14 @@ it ('should check the matrix initialization', () => {
                 break;
         
     }
-    assert.equal(count,(len-1));
+    assert.equal(count,(len));
 });
 });
 
 describe('Checking user inputs boundary conditions', () => {
      let x ;
     it ('should check the user values is less than the matrix boundary', () => {
-             x = 2;
+             x = 7;
              console.log(x)
             assert.equal(tictactoeObj.checkInput(arr,x,len),true);
      });
@@ -50,6 +51,15 @@ describe('Checking user inputs boundary conditions', () => {
 
 });
 
+
+describe('winning status', () => {
+    it ('should check the winner status of player1', () => {
+        assert.equal(tictactoeObj.winnerCheck([1,4,7],'x'),'player 1');
+    });
+    it ('should check the winning status of player2', () => {
+        assert.equal(tictactoeObj.winnerCheck([2,5,8],'o'), 'player 2');
+    });
+});
 
 
 

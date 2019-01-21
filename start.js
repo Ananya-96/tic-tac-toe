@@ -1,4 +1,4 @@
 const {TicTacToeGame} = require("./index")
 
-let tictactoegame = new TicTacToeGame()
-tictactoegame.startGame()
+const tictactoe = new TicTacToeGame();
+tictactoe.startGame();
