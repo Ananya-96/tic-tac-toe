@@ -58,7 +58,7 @@ class TicTacToeGame {
                 break;
             }
         }
-        console.log(i, "  ",result)
+        
             if ( i >= 8 && result ==undefined)
             {
                 console.log('MATCH IS DRAW');
@@ -155,9 +155,6 @@ class TicTacToeGame {
         }
     }
 }
-
-
-console.log('index');
 
 module.exports = { TicTacToeGame };
 
