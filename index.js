@@ -68,7 +68,7 @@ class TicTacToeGame {
     }
 
     checkInput(arr, x, y, width, height) {
-        if (x > width - 1 && y > height - 1) {
+        if ((x > width - 1 || x < 0) || (y > height - 1 || y < 0)) {
             console.log("coordinates out of matrix range")
             console.log("Please enter again")
             return false;
