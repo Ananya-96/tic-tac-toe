@@ -1,7 +1,7 @@
 var readline = require("readline-sync");
 const resultArray = [[0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6], [3, 4, 5], [6, 7, 8], [0, 1, 2]];
 var xArray = [];
-var yArray = [];
+var yArray  = [];
 class TicTacToeGame {
     makeArray(length) {
         var matrixArray = [];
@@ -55,10 +55,24 @@ class TicTacToeGame {
             this.printMatrix(tictactoe);
             result = this.compareCondition( symbol);
             if (result == "player 1" || result == "player 2") {
+                //this.makeArray(9);
+                var restart = readline.question("press y if you want to restart: ");
+                if(restart == "y"){
+                    xArray = [];
+                    yArray = []
+                    this.startGame();
+                }
                 break;
             }
         }
-        
+            if( i >= 8 ){
+                var restart = readline.question("press y if you want to restart: ");
+                if(restart == "y"){
+                    xArray = [];
+                    yArray = []
+                    this.startGame();
+                }
+            }
             if ( i >= 8 && result ==undefined)
             {
                 console.log('MATCH IS DRAW');
@@ -124,7 +138,7 @@ class TicTacToeGame {
 
 
     winnerCheck(array, symbol) {
-        var count;
+        var count = 0;
         var flag = 1;
 
         if (array.length >= 3) {
